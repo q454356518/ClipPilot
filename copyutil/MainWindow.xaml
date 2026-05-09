@@ -15,6 +15,8 @@
         UseLayoutRounding="True"
         SnapsToDevicePixels="True"
         TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="ClearType"
+        TextOptions.TextHintingMode="Fixed"
         Closing="Window_Closing"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         DragEnter="Window_DragEnter"
@@ -30,11 +32,19 @@
             <Setter Property="Padding" Value="5,1" />
             <Setter Property="Margin" Value="0,1" />
             <Setter Property="FontSize" Value="10" />
+            <Setter Property="FontFamily" Value="Microsoft YaHei UI" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="UseLayoutRounding" Value="True" />
+            <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+            <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
+            <Setter Property="TextOptions.TextHintingMode" Value="Fixed" />
             <Setter Property="Cursor" Value="Hand" />
         </Style>
     </Window.Resources>
 
-    <Canvas x:Name="RootCanvas">
+    <Canvas x:Name="RootCanvas"
+            UseLayoutRounding="True"
+            SnapsToDevicePixels="True">
         <Border x:Name="BubblePanel"
                 Canvas.Left="8"
                 Canvas.Top="8"
@@ -42,25 +52,28 @@
                 Height="166"
                 Background="#F7FFFFFF"
                 BorderBrush="#9EC5FF"
-                BorderThickness="1.5"
+                BorderThickness="1"
                 CornerRadius="12"
                 Padding="6,5"
+                UseLayoutRounding="True"
+                SnapsToDevicePixels="True"
                 Visibility="Collapsed">
-            <Border.Effect>
-                <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.24" />
-            </Border.Effect>
             <StackPanel>
                 <TextBlock x:Name="DetectedTypeText"
                            Text="发现文件"
                            Foreground="#1F2A44"
                            FontSize="11"
+                           FontFamily="Microsoft YaHei UI"
                            FontWeight="Bold"
+                           TextOptions.TextRenderingMode="ClearType"
                            TextTrimming="CharacterEllipsis" />
                 <TextBlock x:Name="DetectedNameText"
                            Foreground="#5B6B88"
-                           FontSize="9"
+                           FontSize="10"
+                           FontFamily="Microsoft YaHei UI"
                            Margin="0,2,0,4"
                            MaxWidth="78"
+                           TextOptions.TextRenderingMode="ClearType"
                            TextTrimming="CharacterEllipsis"
                            TextWrapping="NoWrap" />
 
@@ -81,7 +94,7 @@
                 CornerRadius="9"
                 Padding="7,4"
                 Visibility="Collapsed">
-            <TextBlock x:Name="StatusText" Text="松开复制路径" Foreground="#243B66" FontSize="10" />
+            <TextBlock x:Name="StatusText" Text="松开复制路径" Foreground="#243B66" FontSize="10" FontFamily="Microsoft YaHei UI" TextOptions.TextRenderingMode="ClearType" />
         </Border>
 
         <Image x:Name="MascotImage"
