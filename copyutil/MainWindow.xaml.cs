@@ -76,15 +76,16 @@ public partial class MainWindow : Window
 
     private void MascotImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
-        e.Handled = true;
-        if (_currentItems.Count == 0)
+        if (e.ClickCount == 2 && _currentItems.Count > 0)
         {
+            e.Handled = true;
+            BubblePanel.Visibility = BubblePanel.Visibility == Visibility.Visible
+                ? Visibility.Collapsed
+                : Visibility.Visible;
             return;
         }
 
-        BubblePanel.Visibility = BubblePanel.Visibility == Visibility.Visible
-            ? Visibility.Collapsed
-            : Visibility.Visible;
+        Window_MouseLeftButtonDown(sender, e);
     }
 
     private void Window_DragEnter(object sender, System.Windows.DragEventArgs e)

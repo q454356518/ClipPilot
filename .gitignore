@@ -15,3 +15,8 @@ Desktop.ini
 
 # Logs
 *.log
+
+# Local planning docs
+CLAUDE.md
+MVP功能清单*.md
+帮读助手_ClipPilot_桌面端需求文档.md
